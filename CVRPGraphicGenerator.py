@@ -31,8 +31,10 @@ for i, (nome_rota, pontos) in enumerate(rotas):
 for idx, (x, y) in coordenadas.items():
     if idx == 0:
         plt.scatter(x, y, color="red", s=150, marker="s", label="Depósito")  # Depósito quadrado vermelho
+        plt.text(x, y+2.5, "0", fontsize=8, ha="center", va="center", color="black")
     else:
         plt.scatter(x, y, color="black", s=50, marker="o")  # Clientes pretos
+        plt.text(x-0.2, y+1.7, str(idx), fontsize=8, ha="center", va="center", color="black")
 
 plt.xlabel("Coordenada X")
 plt.ylabel("Coordenada Y")
