@@ -29,7 +29,7 @@ df = pd.DataFrame(stats)
 print("\n=== Estatísticas Consolidadas ===")
 print(df.to_string(index=False, float_format='{:0.4f}'.format))
 
-# Gráfico de barras agrupadas com labels
+# Gráfico de barras agrupadas com labels externos
 labels = df['Métrica']
 values_t = df['Tempo (ms)']
 values_d = df['Distância (arbitrária)']
@@ -53,6 +53,13 @@ for bar in bars_d:
 plt.xticks(x, labels)
 plt.ylabel('Valor')
 plt.title('Comparação das Estatísticas Tempo × Distância (com valores)')
-plt.legend()
+
+# Aqui posicionamos a legenda *fora* do gráfico, abaixo, centralizada à direita:
+plt.legend(
+    loc='upper center', 
+    bbox_to_anchor=(0.88, -0.05),  # 75% da largura à direita, 15% para baixo do eixo
+    ncol=1
+)
+
 plt.tight_layout()
 plt.show()
