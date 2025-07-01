@@ -3,8 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Substitua pelos seus 5 tempos (s) e 5 distâncias (km)
-tempos = [2691, 2621, 2477, 2321, 2539]
-distancias = [874.84, 945.38, 873.28, 857.57, 824.07]
+tempos = [15, 15, 15, 14, 8]
+distancias = [1146.37, 1146.37, 1146.37, 1146.37, 1146.37]
 
 # Cálculo de estatísticas
 media_t = np.mean(tempos)
@@ -43,11 +43,11 @@ bars_d = plt.bar(x + width/2, values_d, width, label='Distância (arbitrária)')
 # Adiciona valores sobre cada barra
 for bar in bars_t:
     height = bar.get_height()
-    plt.text(bar.get_x() + bar.get_width()/2, height, f'{height:.4f}', 
+    plt.text(bar.get_x() + bar.get_width()/2, height, f'{height:.4f}'.replace('.', ','), 
              ha='center', va='bottom')
 for bar in bars_d:
     height = bar.get_height()
-    plt.text(bar.get_x() + bar.get_width()/2, height, f'{height:.4f}', 
+    plt.text(bar.get_x() + bar.get_width()/2, height, f'{height:.4f}'.replace('.', ','), 
              ha='center', va='bottom')
 
 plt.xticks(x, labels)
