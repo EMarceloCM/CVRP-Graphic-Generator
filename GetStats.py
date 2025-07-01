@@ -43,11 +43,11 @@ bars_d = plt.bar(x + width/2, values_d, width, label='Distância (arbitrária)')
 # Adiciona valores sobre cada barra
 for bar in bars_t:
     height = bar.get_height()
-    plt.text(bar.get_x() + bar.get_width()/2, height, f'{height:.4f}', 
+    plt.text(bar.get_x() + bar.get_width()/2, height, f'{height:.4f}'.replace('.', ','), 
              ha='center', va='bottom')
 for bar in bars_d:
     height = bar.get_height()
-    plt.text(bar.get_x() + bar.get_width()/2, height, f'{height:.4f}', 
+    plt.text(bar.get_x() + bar.get_width()/2, height, f'{height:.4f}'.replace('.', ','), 
              ha='center', va='bottom')
 
 plt.xticks(x, labels)
